@@ -51,7 +51,7 @@ feature/
 
 ### Installation
 ```bash
-git clone https://github.com/sathishkumar1392/RunningTrackApp.git
+git clone https://github.com/sathishkumar1392/RunTracker
 cd RunningTrackApp
 ```
 Open in Android Studio and run on emulator or device.
