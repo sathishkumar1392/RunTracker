@@ -1,10 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.mapsplatform.secrets.plugin)
 }
 
 android {
-    namespace = "com.sathish.runTracking"
+    namespace = "com.sathish.runTracker"
     compileSdk {
         version = release(37)
     }
