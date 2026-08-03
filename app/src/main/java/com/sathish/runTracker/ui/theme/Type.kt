@@ -1,4 +1,4 @@
-package com.sathish.runTracking.ui.theme
+package com.sathish.runTracker.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

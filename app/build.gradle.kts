@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.sathish.runTracking"
+    namespace = "com.sathish.runTracker"
     compileSdk {
         version = release(37)
     }
