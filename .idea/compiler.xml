@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="25">
-      <module name="Tracking.auth.data" target="25" />
-      <module name="Tracking.auth.presentation" target="25" />
-      <module name="Tracking.core.data" target="25" />
-      <module name="Tracking.core.database" target="25" />
-      <module name="Tracking.core.presentation.designsystem" target="25" />
-      <module name="Tracking.core.presentation.ui" target="25" />
-      <module name="Tracking.run" target="25" />
-      <module name="Tracking.run.data" target="25" />
-      <module name="Tracking.run.location" target="25" />
-      <module name="Tracking.run.network" target="25" />
-      <module name="Tracking.run.presentation" target="25" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="11" />
   </component>
 </project>
