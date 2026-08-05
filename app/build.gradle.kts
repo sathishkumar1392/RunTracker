@@ -51,4 +51,36 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+
+
+    // Crypto
+    implementation(libs.androidx.security.crypto.ktx)
+
+    api(libs.core)
+
+    // Location
+    implementation(libs.google.android.gms.play.services.location)
+
+    // Splash screen
+    implementation(libs.androidx.core.splashscreen)
+
+    // Timber
+    implementation(libs.timber)
+
+    implementation(projects.core.presentation.designsystem)
+    implementation(projects.core.presentation.ui)
+    implementation(projects.core.domain)
+    implementation(projects.core.data)
+    implementation(projects.core.database)
+
+    implementation(projects.auth.presentation)
+    implementation(projects.auth.domain)
+    implementation(projects.auth.data)
+
+    implementation(projects.run.presentation)
+    implementation(projects.run.domain)
+    implementation(projects.run.data)
+    implementation(projects.run.location)
+    implementation(projects.run.network)
+
 }
