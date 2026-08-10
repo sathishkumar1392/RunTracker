@@ -1,4 +1,4 @@
-package com.sathish.runTracker.ui.theme
+package com.sathish.runtracker.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

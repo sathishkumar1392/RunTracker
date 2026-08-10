@@ -2,8 +2,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.sathish.runTracking.convention"
-
+group = "com.sathish.runtracker.convention"
 
 dependencies{
     compileOnly(libs.android.gradlePlugin)
@@ -11,4 +10,13 @@ dependencies{
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.ksp.gradlePlugin)
     compileOnly(libs.room.gradlePlugin)
+}
+
+gradlePlugin {
+    plugins {
+        register("androidApplication"){
+            id = "runtracker.android.application"
+            implementationClass = "AndroidApplicationConventionPlugin"
+        }
+    }
 }

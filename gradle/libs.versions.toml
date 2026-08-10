@@ -40,11 +40,11 @@ annotation = "1.10.0"
 
 
 #project version
-projectApplicationId = "com.sathish.runTracking"
+projectApplicationId = "com.sathish.runtracker"
 projectVersionName = "1.0"
 projectMinSdkVersion = "24"
 projectTargetSdkVersion = "37"
-projectComplileSdkVersion = "37"
+projectCompileSdkVersion = "37"
 projectVersionCode = "1"
 
 [libraries]
@@ -119,5 +119,7 @@ room = { id = "androidx.room", version.ref = "room" }
 org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "org-jetbrains-kotlin-jvm" }
 androidDynamicFeature = { id = "com.android.dynamic-feature", version.ref = "agp" }
 mapsplatform-secrets-plugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secretsPlugin"}
+
+runtracker-android-application = {id = "runtracker.android.application",version = "unspecified"}
 
 

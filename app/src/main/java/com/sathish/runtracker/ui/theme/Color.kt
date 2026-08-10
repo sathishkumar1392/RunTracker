@@ -1,4 +1,4 @@
-package com.sathish.runTracker.ui.theme
+package com.sathish.runtracker.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
