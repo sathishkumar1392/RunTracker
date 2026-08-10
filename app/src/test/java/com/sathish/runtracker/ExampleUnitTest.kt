@@ -1,4 +1,4 @@
-package com.sathish.runTracker
+package com.sathish.runtracker
 
 import org.junit.Test
 
