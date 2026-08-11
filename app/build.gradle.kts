@@ -13,6 +13,14 @@ android {
         }
     }
 
+    buildTypes {
+        release {
+            optimization {
+                enable = false
+            }
+        }
+    }
+
     buildFeatures {
         compose = true
     }

@@ -8,54 +8,65 @@ import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 
-internal fun Project.buildTypes(
-    commonExtension: CommonExtension,
-    extensionType: ExtensionType
+internal fun Project.configureBuildTypes(
+	commonExtension: CommonExtension, extensionType: ExtensionType
 ) {
-    commonExtension.run {
-        val apiKey = gradleLocalProperties(rootDir, providers).getProperty("API_KEY")
-        when (extensionType) {
-            ExtensionType.APPLICATION -> {
-                extensions.configure<ApplicationExtension> {
-                    buildTypes {
-                        debug {
-                           configurableDebugBuildType(apiKey)
-                        }
+	commonExtension.run {
+		buildFeatures.run {
+			buildConfig = true
+		}
 
-                        release {
-                            configurableReleaseBuildType(commonExtension = commonExtension, apiKey = apiKey)
-                        }
-                    }
-                }
-            }
+		val apiKey = gradleLocalProperties(rootDir, providers).getProperty("API_KEY")
+		when (extensionType) {
+			ExtensionType.APPLICATION -> {
+				this@configureBuildTypes.extensions.configure<ApplicationExtension> {
+					buildTypes {
+						debug {
+							configureDebugBuildType(apiKey)
+						}
 
-            ExtensionType.LIBRARY -> {
-                extensions.configure<LibraryExtension> {
-                    buildTypes {
-                        debug {
-                            configurableDebugBuildType(apiKey)
-                        }
+						release {
+							configureReleaseBuildType(
+								commonExtension = commonExtension, apiKey = apiKey
+							)
+						}
+					}
+				}
+			}
 
-                        release {
-                            configurableReleaseBuildType(commonExtension = commonExtension, apiKey = apiKey)
-                        }
-                    }
-                }
-            }
-        }
-    }
+			ExtensionType.LIBRARY -> {
+				this@configureBuildTypes.extensions.configure<LibraryExtension> {
+					buildTypes {
+						debug {
+							configureDebugBuildType(apiKey)
+						}
+
+						release {
+							configureReleaseBuildType(
+								commonExtension = commonExtension, apiKey = apiKey
+							)
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
-private fun BuildType.configurableDebugBuildType(apiKey:String){
-    buildConfigField("String", "API_KEY","\"$apiKey\"")
-    buildConfigField("String", "BASE_URL", "\"https://runique.pl-coding:8080\"")
+private fun BuildType.configureDebugBuildType(
+	apiKey: String
+) {
+	buildConfigField("String", "API_KEY", "\"$apiKey\"")
+	buildConfigField("String", "BASE_URL", "\"https://runique.pl-coding:8080\"")
 }
 
-private fun BuildType.configurableReleaseBuildType(commonExtension: CommonExtension,apiKey: String) {
-    buildConfigField("String", "API_KEY","\"$apiKey\"")
-    buildConfigField("String", "BASE_URL", "\"https://runique.pl-coding:8080\"")
-    isMinifyEnabled = true
-    proguardFiles(
-        commonExtension.getDefaultProguardFile("proguard-android-optimize.txt"),"proguard-rules.pro"
-    )
+private fun BuildType.configureReleaseBuildType(commonExtension: CommonExtension, apiKey: String) {
+	buildConfigField("String", "API_KEY", "\"$apiKey\"")
+	buildConfigField("String", "BASE_URL", "\"https://runique.pl-coding:8080\"")
+
+	isMinifyEnabled = true
+	proguardFiles(
+		commonExtension.getDefaultProguardFile("proguard-android-optimize.txt"),
+		"proguard-rules.pro"
+	)
 }
