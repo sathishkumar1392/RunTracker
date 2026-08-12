@@ -1,7 +1,6 @@
 plugins {
-    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.runtracker.android.application.compose)
     alias(libs.plugins.mapsplatform.secrets.plugin)
-    alias(libs.plugins.runtracker.android.application)
 }
 
 android {
