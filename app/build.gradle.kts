@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.runtracker.android.application.compose)
+    alias(libs.plugins.runtracker.jvm.ktor)
     alias(libs.plugins.mapsplatform.secrets.plugin)
 }
 
@@ -11,17 +12,10 @@ android {
             useSupportLibrary = true
         }
     }
-
-    buildTypes {
-        release {
-            optimization {
-                enable = false
-            }
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
-    }
-
-    buildFeatures {
-        compose = true
     }
 }
 
