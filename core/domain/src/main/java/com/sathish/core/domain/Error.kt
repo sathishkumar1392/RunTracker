@@ -1,4 +1,3 @@
 package com.sathish.core.domain
 
-class MyClass {
-}
+interface Error
