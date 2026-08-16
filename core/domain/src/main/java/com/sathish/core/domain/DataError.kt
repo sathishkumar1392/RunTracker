@@ -3,21 +3,15 @@ package com.sathish.core.domain
 sealed interface DataError : Error {
 	enum class Network : DataError {
 		REQUEST_TIMEOUT,
-		UNAUTHORIZED,
-		CONFLICT,
-		TOO_MANY_REQUEST,
+		TOO_MANY_REQUESTS,
 		PAYLOAD_TOO_LARGE,
 		SERVER_ERROR,
 		SERIALIZATION,
 		NO_INTERNET,
-		TIMEOUT,
 		UNKNOWN,
 	}
 
-	enum class Database : DataError {
-		CONNECTION_FAILED,
-		TIMEOUT,
-		UNKNOWN,
+	enum class Local : DataError {
 		DISK_FULL
 	}
 }
