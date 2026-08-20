@@ -8,7 +8,7 @@ import org.gradle.kotlin.dsl.dependencies
 class AndroidRoomConventionPlugin : Plugin<Project> {
 	override fun apply(target: Project) {
 		target.run{
-              pluginManager.run{
+			pluginManager.run{
 				  apply("androidx.room")
 	              apply("com.google.devtools.ksp")
               }
