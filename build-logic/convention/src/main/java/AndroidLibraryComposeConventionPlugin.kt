@@ -1,5 +1,4 @@
 import com.android.build.api.dsl.LibraryExtension
-import com.sathish.convention.ExtensionType
 import com.sathish.convention.configureAndroidCompose
 import org.gradle.api.Plugin
 import org.gradle.api.Project
